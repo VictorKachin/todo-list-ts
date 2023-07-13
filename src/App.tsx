@@ -14,13 +14,17 @@ const App = () => {
 	// ]
 
 	// Разобрали useState по полочкам:
-	// let arr = useState(initTasks);
-	// let tasks = arr[0];
-	// let setTasks = arr[1];
+	// 50:30 https://www.youtube.com/watch?v=an32Q6yqqfY&list=PLcvhF2Wqh7DOFHUukzl5g4BP_Bbn6oM00&index=2&t=1222s
+	// как работает useState внутри
+	// export function Counter() {
+	// let arr = useState(5);
+	// let data = arr[0];
+	// let setData = arr[1];
+	// return <div omClick{ () => { setData(data + 1) } }>{data}</div>
+	// }
+	// 1:00:00
 
-	// let [tasks, setTasks] = useState(initTasks);
-
-	const [tasks, setTasks] = useState([
+	let [tasks, setTasks] = useState([
 		{ id: v1(), title: 'HTML&CSS', isDone: true },
 		{ id: v1(), title: 'JS', isDone: true },
 		{ id: v1(), title: 'React.js', isDone: false },
@@ -44,7 +48,7 @@ const App = () => {
 		let newTasks = [newTask, ...tasks]
 		setTasks(newTasks)
 	}
-
+	// 1:08:04 !!!
 	const [filter, setFilter] = useState<FilterValuesType>('all')
 
 	let tasksForTodoList = tasks
