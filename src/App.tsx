@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import { v1 } from 'uuid'
 import './App.css'
-import { TodoList } from './TodoList'
+import { TaskType, TodoList } from './TodoList'
 
+// тип (type) назвали сами:
 export type FilterValuesType = 'all' | 'completed' | 'active'
 
-const App = () => {
+function App() {
 	// let initTasks: Array<TaskType> = [
 	//   {id: 1, title: 'HTML&CSS', isDone: true},
 	//   {id: 2, title: 'JS', isDone: true},
@@ -24,7 +25,7 @@ const App = () => {
 	// }
 	// 1:00:00
 
-	let [tasks, setTasks] = useState([
+	let [tasks, setTasks] = useState<Array<TaskType>>([
 		{ id: v1(), title: 'HTML&CSS', isDone: true },
 		{ id: v1(), title: 'JS', isDone: true },
 		{ id: v1(), title: 'React.js', isDone: false },
@@ -48,16 +49,16 @@ const App = () => {
 		let newTasks = [newTask, ...tasks]
 		setTasks(newTasks)
 	}
-	// 1:08:04 !!!
-	const [filter, setFilter] = useState<FilterValuesType>('all')
+
+	let [filter, setFilter] = useState<FilterValuesType>('all')
 
 	let tasksForTodoList = tasks
 
 	if (filter === 'completed') {
-		tasksForTodoList = tasks.filter(t => t.isDone === true)
+		tasksForTodoList = tasks.filter(t => t.isDone)
 	}
 	if (filter === 'active') {
-		tasksForTodoList = tasks.filter(t => t.isDone === false)
+		tasksForTodoList = tasks.filter(t => !t.isDone)
 	}
 
 	function changeFilter(value: FilterValuesType) {
