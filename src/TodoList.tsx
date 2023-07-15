@@ -10,8 +10,7 @@ export type TaskType = {
 type PropsType = {
 	title: string
 	description: string
-	tasks: Array<TaskType>
-	//tasks: TaskType[],
+	tasks: Array<TaskType> // tasks: TaskType[],
 	removeTask: (id: string) => void
 	changeFilter: (value: FilterValuesType) => void
 	addTask: (title: string) => void
@@ -29,16 +28,14 @@ export function TodoList(props: PropsType) {
 	const onKeyPressHandler = (e: KeyboardEvent<HTMLInputElement>) => {
 		if (e.ctrlKey && e.charCode === 13) {
 			props.addTask(newTaskTitle)
-			// очистка input после ввода:
-			setNewTaskTitle('')
+			setNewTaskTitle('') // очистка input после ввода:
 		}
 	}
 	// 50:00
 	const addTask = () => {
 		if (newTaskTitle.trim() !== '') {
 			props.addTask(newTaskTitle.trim())
-			// очистка input после ввода:
-			setNewTaskTitle('')
+			setNewTaskTitle('') // очистка input после ввода:
 		} else {
 			setError('Field is required')
 		}
