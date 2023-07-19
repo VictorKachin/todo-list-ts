@@ -33,7 +33,9 @@ function App() {
 		{ id: v1(), title: 'GraphQL', isDone: false },
 	])
 
-	console.log(tasks)
+	// console.log(tasks)
+
+	let [filter, setFilter] = useState<FilterValuesType>('all')
 
 	function removeTask(id: string) {
 		let filteredTasks = tasks.filter(t => t.id !== id)
@@ -59,8 +61,6 @@ function App() {
 		setTasks([...tasks])
 	}
 
-	let [filter, setFilter] = useState<FilterValuesType>('all')
-
 	let tasksForTodoList = tasks
 
 	if (filter === 'completed') {
@@ -75,7 +75,7 @@ function App() {
 	}
 
 	return (
-		<div className='App'>
+		<div className={'App'}>
 			<TodoList
 				title='What to learn?'
 				description='Press Ctrl+Enter to add new task'
@@ -84,6 +84,7 @@ function App() {
 				changeFilter={changeFilter}
 				addTask={addTask}
 				changeTaskStatus={changeStatus}
+				filter={filter}
 			/>
 		</div>
 	)
