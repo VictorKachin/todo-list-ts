@@ -1,10 +1,13 @@
 .App {
 	padding: 30px;
 	display: flex;
-}
 
-.App > div {
-	margin-right: 50px;
+	/* CSS Nesting */
+	& div {
+		margin-right: 2rem;
+		background-color: darkseagreen;
+		padding: 1rem;
+	}
 }
 
 .error {
