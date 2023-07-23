@@ -1,10 +1,11 @@
 {
-  "editor.detectIndentation": false,
-  "files.autoSave": "off",
-  "terminal.integrated.altClickMovesCursor": false,
-  "vim.cursorStylePerMode.insert": "line",
-  "vim.cursorStylePerMode.normal": "line",
-  "editor.find.cursorMoveOnType": true,
-  "vim.startofline": false,
-  "workbench.colorCustomizations": {}
+	"editor.detectIndentation": false,
+	"files.autoSave": "off",
+	"terminal.integrated.altClickMovesCursor": false,
+	"vim.cursorStylePerMode.insert": "line",
+	"vim.cursorStylePerMode.normal": "line",
+	"editor.find.cursorMoveOnType": true,
+	"vim.startofline": false,
+	"workbench.colorCustomizations": {},
+	"cSpell.words": ["todolist"]
 }

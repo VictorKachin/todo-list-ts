@@ -12,11 +12,16 @@ type PropsType = {
 	title: string
 	description: string
 	tasks: Array<TaskType> // tasks: TaskType[],
-	removeTask: (id: string) => void
+	removeTask: (id: string, todolistId: string) => void
 	changeFilter: (value: FilterValuesType, todolistId: string) => void
-	addTask: (title: string) => void
-	changeTaskStatus: (taskId: string, isDone: boolean) => void
+	addTask: (title: string, todolistId: string) => void
+	changeTaskStatus: (
+		taskId: string,
+		isDone: boolean,
+		todolistId: string
+	) => void
 	filter: FilterValuesType
+	removeTodoList: (todolistId: string) => void
 }
 
 export function TodoList(props: PropsType) {
@@ -25,7 +30,7 @@ export function TodoList(props: PropsType) {
 
 	const addTask = () => {
 		if (newTaskTitle.trim() !== '') {
-			props.addTask(newTaskTitle.trim())
+			props.addTask(newTaskTitle.trim(), props.id)
 			setNewTaskTitle('') // очистка input после ввода:
 		} else {
 			setError('Field is required')
@@ -55,9 +60,16 @@ export function TodoList(props: PropsType) {
 		props.changeFilter('completed', props.id)
 	}
 
+	const removeTodoList = () => {
+		props.removeTodoList(props.id)
+	}
+
 	return (
 		<div>
-			<h3>{props.title}</h3>
+			<h3>
+				{props.title}
+				<button onClick={removeTodoList}>X</button>
+			</h3>
 			<h5>{props.description}</h5>
 			<div>
 				<input
@@ -72,9 +84,9 @@ export function TodoList(props: PropsType) {
 
 			<ul>
 				{props.tasks.map(t => {
-					const onRemoveHandler = () => props.removeTask(t.id)
+					const onRemoveHandler = () => props.removeTask(t.id, props.id)
 					const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-						props.changeTaskStatus(t.id, e.currentTarget.checked)
+						props.changeTaskStatus(t.id, e.currentTarget.checked, props.id)
 					}
 
 					return (
