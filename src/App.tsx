@@ -95,8 +95,8 @@ function App() {
 			{id: v1(), title: 'Oil', isDone: true},
 			{id: v1(), title: 'Milk', isDone: true},
 			{id: v1(), title: 'Bread', isDone: false},
-			{id: v1(), title: 'Redux', isDone: false},
-			{id: v1(), title: 'GraphQL', isDone: false}
+			{id: v1(), title: 'Book', isDone: false},
+			{id: v1(), title: 'Bag', isDone: false}
 		]
 	})
 	// 35:24 #05
