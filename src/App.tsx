@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { v1 } from 'uuid'
+import { AddItemForm } from './AddItemForm'
 import './App.css'
 import { TodoList } from './TodoList'
 
@@ -32,7 +33,6 @@ function App() {
 	// 1:00:00
 
 	function removeTask(id: string, todolistId: string) {
-		debugger
 		let tasks = tasksObj[todolistId]
 		let filteredTasks = tasks.filter(t => t.id !== id)
 		tasksObj[todolistId] = filteredTasks
@@ -104,7 +104,7 @@ function App() {
 
 	return (
 		<div className={'App'}>
-			{' '}
+			<AddItemForm id={'props.id'} addTask={() => {}} />
 			{todolists.map(tl => {
 				let tasksForTodoList = tasksObj[tl.id]
 
