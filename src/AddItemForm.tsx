@@ -1,10 +1,7 @@
 import { ChangeEvent, KeyboardEvent, useState } from 'react'
 
-// 12:14 #6
-
 type AddItemFormPropsType = {
-	id: string
-	addTask: (title: string, todolistId: string) => void
+	addItem: (title: string) => void
 }
 export function AddItemForm(props: AddItemFormPropsType) {
 	let [title, setTitle] = useState('')
@@ -23,7 +20,7 @@ export function AddItemForm(props: AddItemFormPropsType) {
 
 	const addTask = () => {
 		if (title.trim() !== '') {
-			props.addTask(title.trim(), props.id)
+			props.addItem(title.trim())
 			setTitle('') // очистка input после ввода:
 		} else {
 			setError('Field is required')
