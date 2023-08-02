@@ -1,6 +1,6 @@
 {
 	"editor.detectIndentation": false,
-	"files.autoSave": "off",
+	"files.autoSave": "afterDelay",
 	"terminal.integrated.altClickMovesCursor": false,
 	"vim.cursorStylePerMode.insert": "line",
 	"vim.cursorStylePerMode.normal": "line",
