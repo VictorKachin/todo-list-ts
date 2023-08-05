@@ -5,7 +5,8 @@
 	/* CSS Nesting */
 	& div {
 		margin-right: 2rem;
-		background-color: darkseagreen;
+		/* background-color: lightgray; */
+		border: 1px solid gray;
 		padding: 1rem;
 	}
 }
