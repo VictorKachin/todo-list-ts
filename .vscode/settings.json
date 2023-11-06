@@ -7,5 +7,7 @@
 	"editor.find.cursorMoveOnType": true,
 	"vim.startofline": false,
 	"workbench.colorCustomizations": {},
-	"cSpell.words": ["todolist"]
+	"cSpell.words": ["todolist"],
+	"editor.fontFamily": "JetBrains Mono",
+	"editor.fontSize": 14
 }
