@@ -37,7 +37,7 @@ export function AddItemForm(props: AddItemFormPropsType) {
 				onKeyPress={onKeyPressHandler}
 				className={error ? 'error' : ''}
 			/>
-			<Button onClick={addTask}>+</Button>
+			<kButton onClick={addTask}>+</kButton>
 			{error && <div className='error-message'>{error}</div>}
 		</div>
 	)
