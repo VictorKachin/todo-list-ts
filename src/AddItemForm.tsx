@@ -1,3 +1,4 @@
+import Button from '@mui/material/Button'
 import { ChangeEvent, KeyboardEvent, useState } from 'react'
 
 type AddItemFormPropsType = {
@@ -36,7 +37,7 @@ export function AddItemForm(props: AddItemFormPropsType) {
 				onKeyPress={onKeyPressHandler}
 				className={error ? 'error' : ''}
 			/>
-			<kButton onClick={addTask}>+</kButton>
+			<Button onClick={addTask}>+</Button>
 			{error && <div className='error-message'>{error}</div>}
 		</div>
 	)
