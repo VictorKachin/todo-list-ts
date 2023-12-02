@@ -30,7 +30,7 @@ export function AddItemForm(props: AddItemFormPropsType) {
 
 	return (
 		<div>
-			<h3>Input here TodoList Title</h3>
+			<h3>Input TodoList Title here</h3>
 			<input
 				value={title}
 				onChange={onChangeHandler}
